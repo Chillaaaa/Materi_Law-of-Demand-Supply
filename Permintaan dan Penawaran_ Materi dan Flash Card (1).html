@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Permintaan dan Penawaran: Materi dan Flash Card</title>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg1:#EAF1FF;--bg2:#FFF0E3;--bo:.4;--glass:rgba(255,255,255,.86);--g2:rgba(255,255,255,.96);--line:rgba(15,40,100,.22);--ink:#0B1730;--mut:#33425E;--d:#1746D1;--d2:#2563EB;--d3:#38BDF8;--s:#B8400A;--s2:#C4480F;--s3:#FFB020;--ds:rgba(23,70,209,.1);--ss:rgba(184,64,10,.1);--dg:rgba(37,99,235,.4);--sg:rgba(196,72,15,.4);--on:#fff;--btn:#0F2E8F;--btnt:#fff;--tag:#FFC83D;--sh:0 1px 2px rgba(11,23,48,.1),0 10px 28px -10px rgba(11,23,48,.25),0 28px 50px -28px rgba(11,23,48,.3);--hi:inset 0 1px 0 rgba(255,255,255,.8);color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg1:#050C1F;--bg2:#1B0F07;--bo:.26;--glass:rgba(15,25,50,.88);--g2:rgba(12,20,42,.96);--line:rgba(170,195,255,.3);--ink:#F2F6FF;--mut:#BCC8E2;--d:#8FB2FF;--d2:#5B8DFF;--s:#FFAA78;--s2:#FF9150;--ds:rgba(143,178,255,.15);--ss:rgba(255,170,120,.15);--on:#06112B;--btn:#A9C2FF;--btnt:#06112B;--sh:0 1px 2px rgba(0,0,0,.5),0 12px 30px -10px rgba(0,0,0,.7);--hi:inset 0 1px 0 rgba(255,255,255,.12);color-scheme:dark}}
+:root[data-theme="dark"]{--bg1:#050C1F;--bg2:#1B0F07;--bo:.26;--glass:rgba(15,25,50,.88);--g2:rgba(12,20,42,.96);--line:rgba(170,195,255,.3);--ink:#F2F6FF;--mut:#BCC8E2;--d:#8FB2FF;--d2:#5B8DFF;--s:#FFAA78;--s2:#FF9150;--ds:rgba(143,178,255,.15);--ss:rgba(255,170,120,.15);--on:#06112B;--btn:#A9C2FF;--btnt:#06112B;--sh:0 1px 2px rgba(0,0,0,.5),0 12px 30px -10px rgba(0,0,0,.7);--hi:inset 0 1px 0 rgba(255,255,255,.12);color-scheme:dark}
+.dem{--a:var(--d);--a2:var(--d2);--as:var(--ds);--ag:var(--dg)}.sup{--a:var(--s);--a2:var(--s2);--as:var(--ss);--ag:var(--sg)}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:calc(var(--hh,150px) + env(safe-area-inset-top,0px) + 24px);font-size:100%}
+body{margin:0;color:var(--ink);font:400 1.0625rem/1.65 Lexend,system-ui,sans-serif;overflow-x:hidden;background:var(--bg1)}
+button{font:inherit;color:inherit}
+:focus-visible{outline:3px solid var(--tag);outline-offset:3px;box-shadow:0 0 0 6px var(--ink)}
+.bg{position:fixed;inset:0;z-index:-1;overflow:hidden;pointer-events:none;background:radial-gradient(70% 50% at 10% 0,rgba(46,123,255,.22),transparent 70%),radial-gradient(60% 50% at 95% 100%,rgba(255,138,61,.22),transparent 70%),linear-gradient(160deg,var(--bg1),var(--bg2))}
+.bl{position:absolute;border-radius:50%;filter:blur(64px);opacity:var(--bo);animation:fl 24s ease-in-out infinite alternate}
+.b1{width:38vmax;height:38vmax;left:-10vmax;top:5vh;background:#2E7BFF}
+.b2{width:32vmax;height:32vmax;right:-8vmax;top:40vh;background:#FF8A3D;animation-delay:-8s}
+.b3{width:24vmax;height:24vmax;left:30vw;bottom:-10vmax;background:#38BDF8;animation-delay:-14s}
+@keyframes fl{to{transform:translate(4vmax,-3vmax) scale(1.08)}}
+header{position:sticky;top:calc(env(safe-area-inset-top,0px) + 8px);z-index:20;max-width:1100px;width:calc(100% - 16px);margin:8px auto 0;border-radius:28px;background:var(--glass);-webkit-backdrop-filter:blur(18px) saturate(1.5);backdrop-filter:blur(18px) saturate(1.5);border:1.5px solid var(--line);box-shadow:var(--sh),var(--hi)}
+.bar{display:flex;flex-wrap:wrap;align-items:center;gap:.5rem .8rem;padding:.55rem .7rem}
+.brand{order:1;display:none;align-items:center;gap:.5rem;font-weight:700;white-space:nowrap;padding-left:.4rem}
+.brand::before{content:"";width:1.1rem;height:1.1rem;border-radius:50%;background:linear-gradient(135deg,var(--d2),var(--s3))}
+nav{order:3;flex:1 1 100%;min-width:0;position:relative;display:flex;gap:.2rem;overflow-x:auto;scrollbar-width:none;padding:4px;border-radius:99px;background:var(--ds)}
+nav::-webkit-scrollbar{display:none}
+.ind{position:absolute;left:0;top:4px;bottom:4px;border-radius:99px;opacity:0;z-index:0;box-shadow:0 4px 14px -4px var(--dg);transition:transform .45s cubic-bezier(.3,.8,.2,1),width .45s cubic-bezier(.3,.8,.2,1),background .3s,opacity .3s}
+.ind.dem{background:var(--d)}.ind.sup{background:var(--s)}
+nav a{position:relative;z-index:1;min-height:clamp(48px,3.2rem,56px);display:flex;align-items:center;padding:0 1.1rem;border-radius:99px;color:var(--ink);text-decoration:none;white-space:nowrap;font-weight:600;font-size:.95rem;transition:color .3s,transform .15s}
+nav a[aria-current=true]{color:var(--on)}
+nav a:active{transform:scale(.95)}
+nav a:focus-visible{outline-offset:-4px;box-shadow:none}
+.sz{order:2;display:flex;align-items:center;gap:.6rem;width:100%}
+.szl{flex:1;font-weight:700;line-height:1.25;padding-left:.4rem}
+.szl output{display:block;font-weight:500;color:var(--mut);font-size:.9rem}
+.sz button{width:clamp(56px,3.8rem,64px);height:clamp(56px,3.8rem,64px);border:3px solid var(--btn);border-radius:18px;font-weight:700;line-height:1;cursor:pointer;background:var(--g2);color:var(--btn);box-shadow:0 4px 0 var(--btn);transition:transform .15s,box-shadow .15s}
+#am{font-size:1.4rem}#ap{font-size:2rem;background:var(--btn);color:var(--btnt)}
+.sz button:hover{transform:translateY(-2px)}
+.sz button:active{transform:translateY(3px);box-shadow:0 1px 0 var(--btn)}
+.sz [aria-disabled=true]{opacity:.5;cursor:not-allowed;border-style:dashed}
+@media(min-width:960px){.brand{display:flex}.sz{order:3;width:auto}.szl{flex:none}nav{order:2;flex:1 1 0}}
+.wrap{max-width:1100px;margin:auto;padding:3.5rem 1rem}
+.hero{display:grid;gap:2.2rem;grid-template-columns:1.1fr 1fr;align-items:center;padding-top:2.8rem}
+h1{font-size:clamp(2.1rem,7vw,4.1rem);line-height:1.08;margin:0 0 1.1rem;letter-spacing:-.03em}
+.gr{background:linear-gradient(100deg,var(--d),var(--s));-webkit-background-clip:text;background-clip:text;color:transparent}
+.lead{margin:0 0 1.5rem;max-width:42ch;font-size:1.15rem;color:var(--mut)}
+.cta{display:flex;flex-wrap:wrap;gap:.8rem}
+.btn{display:inline-flex;align-items:center;min-height:3.6rem;padding:0 1.6rem;border-radius:99px;font-weight:700;text-decoration:none;color:var(--ink);background:var(--g2);border:2.5px solid var(--ink);box-shadow:var(--sh);transition:transform .2s}
+.btn.p{background:var(--btn);color:var(--btnt);border-color:var(--btn)}
+.btn:hover{transform:translateY(-3px)}.btn:active{transform:scale(.96)}
+.fu{animation:fu .9s cubic-bezier(.2,.8,.2,1) both;animation-delay:calc(var(--i,0)*120ms)}
+@keyframes fu{from{opacity:0;transform:translateY(24px)}}
+.panel{background:var(--glass);-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px);border:1.5px solid var(--line);border-radius:28px;padding:1.5rem;box-shadow:var(--sh),var(--hi)}
+.panel label{font-weight:600}
+.big{font-size:clamp(2.6rem,9vw,3.6rem);font-weight:700;line-height:1.1;letter-spacing:-.02em;margin:.2rem 0 .3rem;font-variant-numeric:tabular-nums}
+input[type=range]{-webkit-appearance:none;appearance:none;width:100%;height:2.8rem;background:transparent;margin:.2rem 0 .8rem}
+input[type=range]::-webkit-slider-runnable-track{height:14px;border-radius:9px;background:linear-gradient(90deg,var(--d),var(--s))}
+input[type=range]::-moz-range-track{height:14px;border-radius:9px;background:linear-gradient(90deg,var(--d),var(--s))}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:2.4rem;height:2.4rem;margin-top:calc(-1.2rem + 7px);border-radius:50%;background:var(--ink);border:4px solid var(--bg1);box-shadow:0 0 0 3px var(--ink),var(--sh)}
+input[type=range]::-moz-range-thumb{width:1.9rem;height:1.9rem;border-radius:50%;background:var(--ink);border:4px solid var(--bg1);box-shadow:0 0 0 3px var(--ink)}
+.rl{display:flex;justify-content:space-between;align-items:baseline;gap:.5rem;font-weight:600}
+.rl b{font-size:1.5rem;font-variant-numeric:tabular-nums}
+.trk{height:22px;border-radius:12px;background:var(--ds);border:1.5px solid var(--line);overflow:hidden;margin:.3rem 0 .9rem}
+.trk i{display:block;height:100%;border-radius:12px;transition:width .6s cubic-bezier(.3,.8,.2,1)}
+#bd{background:linear-gradient(90deg,var(--d),var(--d3))}#bs{background:linear-gradient(90deg,var(--s),var(--s3))}
+.chips{display:flex;flex-wrap:wrap;gap:.5rem;margin:.4rem 0 .8rem}
+.chips span{padding:.4rem .9rem;border-radius:99px;font-weight:600;font-size:.95rem;border:2.5px solid var(--line);background:var(--g2)}
+#c1{border-color:var(--d)}#c2{border-color:var(--s)}
+#tx{margin:0;line-height:1.6}
+.pn small{display:block;margin-top:.6rem;color:var(--mut);font-size:.9rem}
+h2{font-size:clamp(1.8rem,5vw,2.6rem);line-height:1.15;margin:0 0 .5rem;color:var(--a);letter-spacing:-.02em}
+h2::after{content:"";display:block;width:4.5rem;height:6px;border-radius:9px;margin-top:.7rem;background:linear-gradient(90deg,var(--a),var(--a2))}
+.sub{margin:0 0 1.6rem;color:var(--mut);max-width:60ch;font-size:1.1rem}
+.lnk{display:flex;align-items:center;justify-content:center;gap:1rem;width:100%;min-height:6.5rem;margin:0 0 1.6rem;padding:1.2rem 1.5rem;border-radius:28px;background:linear-gradient(135deg,var(--a),var(--a2));color:var(--on);text-decoration:none;font-weight:700;font-size:clamp(1.4rem,5vw,2rem);line-height:1.25;text-align:center;box-shadow:var(--sh),0 14px 34px -10px var(--ag);transition:transform .25s,box-shadow .25s}
+.lnk::before{content:"\25B6";flex:none;font-size:1.1em}
+.lnk small{display:block;margin-top:.3rem;font-size:1rem;font-weight:500}
+.lnk:hover{transform:translateY(-4px)}.lnk:active{transform:scale(.97)}
+.grid{display:grid;gap:1.1rem;grid-template-columns:repeat(auto-fit,minmax(min(100%,290px),1fr))}
+.it{background:linear-gradient(160deg,var(--as),transparent 55%),var(--g2);border:1.5px solid var(--line);border-top:5px solid var(--a);border-radius:24px;padding:1.4rem;box-shadow:var(--sh),var(--hi)}
+.it h3{display:flex;gap:.7rem;align-items:center;margin:0 0 .7rem;font-size:1.2rem;line-height:1.3}
+.no{flex:none;width:2.5rem;height:2.5rem;border-radius:50%;display:grid;place-items:center;background:linear-gradient(135deg,var(--a),var(--a2));color:var(--on);font-weight:700}
+.it p{margin:0 0 .8rem;line-height:1.75}.it p:last-child{margin:0}
+.it svg{width:100%;max-width:460px;display:block;margin:0 auto .8rem;color:var(--ink)}
+svg text{fill:currentColor;font-size:12px;font-weight:600}
+.cv{fill:none;stroke-width:5;stroke-linecap:round;stroke-dasharray:300;stroke-dashoffset:300}
+.show .cv{animation:dr 1.4s .3s cubic-bezier(.3,.8,.2,1) forwards}
+@keyframes dr{to{stroke-dashoffset:0}}
+.pt{fill:var(--a)}.ha{fill:var(--a);opacity:.25}
+details.it{border-top-width:1.5px;border-left:5px solid var(--a);background:linear-gradient(160deg,var(--as),var(--as)),var(--g2)}
+summary{cursor:pointer;font-weight:700;font-size:1.1rem;min-height:3.2rem;display:flex;align-items:center;justify-content:space-between;gap:1rem;list-style:none}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";flex:none;width:2.4rem;height:2.4rem;border-radius:50%;display:grid;place-items:center;background:var(--a);color:var(--on);font-size:1.5rem;transition:transform .3s}
+details[open] summary::after{transform:rotate(45deg)}
+details p{margin:.6rem 0 0;animation:fi .4s}
+@keyframes fi{from{opacity:0;transform:translateY(-6px)}}
+.js .rv{opacity:0;transform:translateY(22px);transition:opacity .7s,transform .7s cubic-bezier(.2,.8,.2,1);transition-delay:calc(var(--i,0)*90ms)}
+.js .rv.show{opacity:1;transform:none}
+.js .rv.done{transition:transform .3s,box-shadow .3s;transition-delay:0s}
+.js .it.done:hover{transform:translateY(-6px);box-shadow:var(--sh),0 0 34px -4px var(--ag)}
+.deck{max-width:620px;margin:0 auto}
+.stage{perspective:1600px}
+.stage.sw{animation:sw .45s cubic-bezier(.2,.8,.2,1)}
+@keyframes sw{from{opacity:0;transform:translateX(var(--dx,0)) scale(.96)}}
+.card3{all:unset;display:grid;width:100%;cursor:pointer;transform-style:preserve-3d;transition:transform .7s cubic-bezier(.3,.8,.2,1);border-radius:28px;-webkit-tap-highlight-color:transparent}
+.card3:focus-visible{outline:4px solid var(--tag);outline-offset:4px;box-shadow:0 0 0 8px var(--ink)}
+.card3.flip{transform:rotateY(180deg)}
+.face{grid-area:1/1;backface-visibility:hidden;-webkit-backface-visibility:hidden;min-height:26rem;padding:1.5rem;border-radius:28px;display:flex;flex-direction:column;gap:.9rem;border:2.5px solid var(--a);background:linear-gradient(160deg,var(--as),transparent 60%),var(--g2);box-shadow:var(--sh),var(--hi),0 0 44px -10px var(--ag);text-align:left;color:var(--ink);transition:visibility 0s .33s}
+.back{transform:rotateY(180deg);visibility:hidden;background:linear-gradient(150deg,transparent 20%,var(--as)),var(--g2)}
+.flip .back{visibility:visible}.flip .front{visibility:hidden}
+.top{display:flex;justify-content:space-between;align-items:center;gap:.6rem;flex-wrap:wrap;margin-bottom:auto}
+.tg{background:var(--tag);color:#1B1400;padding:.3rem 1rem .3rem 1.6rem;font-weight:700;clip-path:polygon(.8rem 0,100% 0,100% 100%,.8rem 100%,0 50%)}
+.side{font-weight:700;padding:.3rem .9rem;border-radius:99px;border:2px solid var(--a);color:var(--a)}
+.back .side{background:var(--a);color:var(--on)}
+.face h3{margin:0;color:var(--a);font-size:1.15rem}
+.q{margin:0;font-size:1.6rem;font-weight:700;line-height:1.35}
+.hd{font-size:1.4rem;line-height:1.35;color:var(--a)}.dt{margin:0;font-size:1.1rem}
+.hint{margin-top:auto;color:var(--mut);font-weight:500}
+.pg{display:flex;align-items:center;gap:.9rem;margin-top:1.3rem}
+.ct{font-weight:600;white-space:nowrap}
+.bar2{flex:1;height:12px;border-radius:9px;background:var(--ds);border:1.5px solid var(--line);overflow:hidden}
+.bar2 i{display:block;height:100%;width:0;border-radius:9px;background:linear-gradient(90deg,var(--a),var(--a2));transition:width .5s cubic-bezier(.3,.8,.2,1)}
+.ctl{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-top:1rem}
+.ctl button{min-height:4rem;border-radius:20px;font-weight:700;font-size:1.1rem;cursor:pointer;border:3px solid var(--a);background:var(--g2);color:var(--a);box-shadow:var(--sh);transition:transform .15s,box-shadow .2s}
+.ctl .nx{background:var(--a);color:var(--on)}
+.ctl button:hover{transform:translateY(-2px);box-shadow:var(--sh),0 0 26px -4px var(--ag)}.ctl button:active{transform:scale(.96)}
+.dots{display:flex;justify-content:center;flex-wrap:wrap;margin-top:.5rem}
+.dots button{width:44px;height:44px;border:0;background:none;cursor:pointer;display:grid;place-items:center}
+.dots button::after{content:"";width:12px;height:12px;border-radius:50%;background:var(--line);border:2px solid var(--a);transition:transform .25s,background .25s}
+.dots button[aria-current=true]::after{background:var(--a);transform:scale(1.6)}
+.sh{display:block;margin:.4rem auto 0;min-height:3.4rem;padding:0 1.5rem;border-radius:99px;border:2.5px solid var(--ink);background:var(--g2);font-weight:600;cursor:pointer;transition:transform .15s}
+.sh:active{transform:scale(.95)}
+footer{text-align:center;color:var(--mut);padding:2rem 1rem 3rem}
+@media(max-width:820px){.hero{grid-template-columns:1fr}.face{min-height:24rem}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition-duration:.01ms!important;transition-delay:0s!important}html{scroll-behavior:auto}.cv{stroke-dashoffset:0}.js .rv,.fu{opacity:1!important;transform:none!important}}
+</style>
+</head>
+<body>
+<div class="bg" aria-hidden="true"><i class="bl b1"></i><i class="bl b2"></i><i class="bl b3"></i></div>
+<header><div class="bar">
+<span class="brand">Ekonomi X</span>
+<div class="sz" role="group" aria-label="Ukuran teks">
+<span class="szl">Ukuran Teks<output id="szo" aria-live="polite"></output></span>
+<button id="am" type="button" title="Perkecil teks" aria-label="Perkecil teks">A−</button>
+<button id="ap" type="button" title="Perbesar teks" aria-label="Perbesar teks">A+</button>
+</div>
+<nav aria-label="Navigasi bagian"><i class="ind"></i>
+<a class="dem" href="#permintaan">Materi Permintaan</a>
+<a class="sup" href="#penawaran">Materi Penawaran</a>
+<a class="dem" href="#kartu-permintaan">Kartu Permintaan</a>
+<a class="sup" href="#kartu-penawaran">Kartu Penawaran</a>
+</nav>
+</div></header>
+
+<main>
+<div class="wrap hero">
+<div>
+<h1 class="fu"><span class="gr">Harga naik</span>, apa yang terjadi?</h1>
+<p class="lead fu" style="--i:1">Pelajari Hukum Permintaan dan Hukum Penawaran, lalu uji ingatanmu dengan flash card digital.</p>
+<div class="cta fu" style="--i:2"><a class="btn p" href="#permintaan">Mulai belajar</a><a class="btn" href="#kartu-permintaan">Buka flash card</a></div>
+</div>
+<div class="panel pn fu" style="--i:3">
+<label for="pr">Geser untuk mengubah harga</label>
+<div class="big" id="pv" aria-hidden="true"></div>
+<input id="pr" type="range" min="2" max="10" value="6" aria-describedby="tx">
+<div class="rl"><span>Qd (jumlah diminta)</span><b id="nd"></b></div><div class="trk"><i id="bd"></i></div>
+<div class="rl"><span>Qs (jumlah ditawarkan)</span><b id="ns"></b></div><div class="trk"><i id="bs"></i></div>
+<div class="chips"><span id="c0"></span><span id="c1"></span><span id="c2"></span></div>
+<p id="tx" aria-live="polite"></p>
+<small>Perubahan dibandingkan harga Rp6.000. Angka hanya ilustrasi, faktor lain dianggap tetap.</small>
+</div>
+</div>
+
+<section id="permintaan" class="dem wrap"><h2>Materi Hukum Permintaan</h2><p class="sub">Hubungan antara harga dan jumlah barang yang diminta pembeli.</p><a class="lnk" target="_blank" rel="noopener" href="https://chillaaaa.github.io/hukum-permintaan/"><span>Buka video pembelajaran<small>Tersedia subtitle atau transkrip tertulis</small></span></a><div class="grid" id="g-dem"></div></section>
+
+<section id="penawaran" class="sup wrap"><h2>Materi Hukum Penawaran</h2><p class="sub">Hubungan antara harga dan jumlah barang yang ditawarkan penjual.</p><a class="lnk" target="_blank" rel="noopener" href="https://chillaaaa.github.io/hukum-penawaran/"><span>Buka audio pembelajaran<small>Tersedia subtitle atau transkrip tertulis</small></span></a><div class="grid" id="g-sup"></div></section>
+
+<section id="kartu-permintaan" class="dem wrap"><h2>Flash Card Hukum Permintaan</h2><p class="sub">Jawab pertanyaan di depan kartu, lalu ketuk kartu untuk melihat jawabannya.</p><div id="k-dem"></div></section>
+
+<section id="kartu-penawaran" class="sup wrap"><h2>Flash Card Hukum Penawaran</h2><p class="sub">Jawab pertanyaan di depan kartu, lalu ketuk kartu untuk melihat jawabannya.</p><div id="k-sup"></div></section>
+</main>
+<footer>Media Pembelajaran Ekonomi Inklusif, Kelompok 1A. Kelas X (Fase E).</footer>
+
+<script>
+const $=(s,r=document)=>r.querySelector(s),$$=(s,r=document)=>[...r.querySelectorAll(s)];
+const RM=matchMedia("(prefers-reduced-motion:reduce)").matches;
+document.documentElement.classList.add("js");
+let cur=null;
+const MAT={dem:[
+["Pengertian permintaan","Permintaan adalah keinginan yang disertai kemampuan membeli. Kamu ingin es teh dan punya uang untuk membayarnya, itu baru disebut permintaan. Keinginan tanpa kemampuan membayar tidak dihitung."],
+["Qd berbeda dengan permintaan","Qd (jumlah diminta) adalah banyaknya barang yang diminta pada satu harga tertentu, misalnya 3 gelas pada harga Rp5.000. Permintaan adalah hubungan keseluruhan antara berbagai harga dan jumlah yang diminta."],
+["Ceteris paribus","Faktor lain dianggap tetap. Agar pengaruh harga terlihat jelas, pendapatan dan selera dianggap tidak berubah, seperti percobaan IPA yang hanya mengubah satu hal."],
+["Contoh: es krim","Es krim Rp10.000 terasa mahal, sehingga hanya sedikit siswa yang membeli. Saat turun jadi Rp5.000, lebih banyak siswa mampu dan mau membeli, jadi jumlah yang terjual naik."],
+["Bunyi hukum permintaan","Harga naik, Qd turun. Harga turun, Qd naik. Hubungannya berlawanan arah, seperti jungkat-jungkit, dengan syarat ceteris paribus."]],
+sup:[
+["Pengertian penawaran","Penawaran adalah jumlah barang atau jasa yang bersedia dan mampu dijual produsen pada berbagai tingkat harga dalam periode tertentu."],
+["Penawaran berbeda dengan jumlah ditawarkan","Penawaran adalah hubungan antara banyak tingkat harga dan jumlah barang yang ingin dijual. Jumlah ditawarkan (Qs) adalah banyaknya barang yang ingin dijual pada satu tingkat harga tertentu."],
+["Ceteris paribus","Faktor lain dianggap tetap. Contohnya, biaya bahan baku dan teknologi tidak mengalami perubahan."],
+["Contoh: penjual roti","Pada harga Rp5.000, penjual menyediakan 20 roti per hari. Saat harga naik jadi Rp8.000, ia menyediakan 30 roti. Jika harga turun, jumlah roti bisa dikurangi karena keuntungan per roti lebih rendah."],
+["Bunyi hukum penawaran","Harga naik, Qs naik. Harga turun, Qs turun. Hubungannya searah, dengan asumsi faktor lain tetap."]]};
+const THINK={dem:["Jika harga es teh turun, bagaimana jumlah yang ingin dibeli siswa?","Cenderung naik. Harga turun membuat es teh lebih terjangkau, sehingga Qd naik (selama pendapatan dan selera tetap)."],
+sup:["Jika harga kue naik, bagaimana jumlah kue yang dijual?","Jumlah kue cenderung bertambah, sesuai hukum penawaran (faktor lain tetap)."]};
+
+function fig(k){const s=k=="sup";
+return `<div class="it fg rv" style="--i:5"><h3><span class="no" aria-hidden="true">6</span>Kurva ${s?"penawaran":"permintaan"}</h3><svg viewBox="0 0 300 190" role="img" aria-label="Kurva ${s?"penawaran naik dari kiri bawah ke kanan atas":"permintaan turun dari kiri atas ke kanan bawah"}"><defs><linearGradient id="g${k}" x1="0" x2="1"><stop offset="0" style="stop-color:var(--a)"/><stop offset="1" style="stop-color:var(--${s?"s3":"d3"})"/></linearGradient></defs><path d="M40 40H284M40 80H284M40 120H284M90 8V160M140 8V160M190 8V160M240 8V160" stroke="currentColor" opacity=".15"/><path d="M40 8V160H284" fill="none" stroke="currentColor" stroke-width="2.5"/><text x="22" y="14">P</text><text x="262" y="178">${s?"Qs":"Qd"}</text><path class="cv" stroke="url(#g${k})" d="${s?"M50 150L250 30":"M50 30L250 150"}"/>${s?`<circle class="ha" cx="50" cy="150" r="11"/><circle class="ha" cx="250" cy="30" r="11"/><circle class="pt" cx="50" cy="150" r="5"/><circle class="pt" cx="250" cy="30" r="5"/><text x="56" y="178">Rp5.000: 20</text><text x="240" y="22" text-anchor="end">Rp8.000: 30</text>`:`<circle class="ha" cx="50" cy="30" r="11"/><circle class="ha" cx="250" cy="150" r="11"/><circle class="pt" cx="50" cy="30" r="5"/><circle class="pt" cx="250" cy="150" r="5"/><text x="60" y="26">harga tinggi, Qd sedikit</text><text x="244" y="178" text-anchor="end">harga rendah, Qd banyak</text>`}</svg><p>${s?"Kurva naik dari kiri bawah ke kanan atas. Sumbu tegak (P) adalah harga, sumbu datar (Qs) adalah jumlah yang ditawarkan.":"Kurva menurun dari kiri atas ke kanan bawah. Sumbu tegak (P) adalah harga, sumbu datar (Qd) adalah jumlah yang diminta."}</p></div>`}
+for(const k in MAT){$("#g-"+k).innerHTML=MAT[k].map(([t,p],i)=>`<article class="it rv" style="--i:${i}"><h3><span class="no" aria-hidden="true">${i+1}</span>${t}</h3><p>${p}</p></article>`).join("")+fig(k)+`<details class="it rv" style="--i:6"><summary>Coba pikirkan: ${THINK[k][0]}</summary><p>${THINK[k][1]}</p></details>`}
+const CARDS={dem:[
+["Apa itu Permintaan?","Apa yang dimaksud permintaan dalam ilmu ekonomi?","Permintaan = keinginan + kemampuan membeli.","Dalam ekonomi, permintaan bukan sekadar ingin. Kamu ingin es teh dan punya uang untuk membayarnya, itu baru disebut permintaan. Contoh: siswa di kantin ingin jajan dan membawa uang saku."],
+["Keinginan Saja Belum Cukup","Mengapa keinginan saja belum cukup?","Ingin + mampu membayar = permintaan.","Banyak orang ingin ponsel mahal, tapi tidak semuanya punya uang untuk membelinya. Keinginan tanpa kemampuan membayar tidak dihitung sebagai permintaan, karena tidak berujung pada pembelian di pasar."],
+["Jumlah Diminta (Qd)","Apa bedanya Qd dengan permintaan?","Qd = banyaknya barang yang diminta pada satu harga tertentu.","Qd hanya melihat satu titik harga. Contoh: pada harga Rp5.000, siswa meminta 3 gelas. Permintaan adalah hubungan keseluruhan antara berbagai harga dan banyaknya barang yang diminta."],
+["Ceteris Paribus","Apa arti ceteris paribus?","Faktor lain dianggap tetap.","Agar pengaruh harga terlihat jelas, hal lain seperti pendapatan dan selera dianggap tidak berubah. Seperti percobaan IPA: hanya satu hal yang diubah, yaitu harga, lalu kita amati perubahan jumlah yang diminta."],
+["Contoh: Es Krim","Apa yang terjadi pada pembeli saat harga es krim berubah?","Harga naik, pembeli berkurang. Harga turun, pembeli bertambah.","Es krim Rp10.000 terasa mahal, sehingga hanya sedikit siswa yang membeli. Saat turun jadi Rp5.000, lebih banyak siswa mampu dan mau membeli, jadi jumlah yang terjual naik."],
+["Kurva Permintaan","Bagaimana bentuk dan cara membaca kurva permintaan?","Kurva menurun dari kiri atas ke kanan bawah.","Sumbu tegak (P) adalah harga, sumbu datar (Qd) adalah jumlah yang diminta. Harga tinggi di atas dengan Qd sedikit, harga rendah di bawah dengan Qd banyak. Itu tanda hubungan berlawanan arah."],
+["Hukum Permintaan","Bagaimana bunyi hukum permintaan?","Harga naik, Qd turun. Harga turun, Qd naik.","Seperti jungkat-jungkit: bila satu sisi naik, sisi lain turun. Hukum ini berlaku dengan syarat ceteris paribus, yaitu faktor lain seperti pendapatan dan selera tetap."],
+["Coba Pikirkan!","Jika harga es teh turun, apa yang terjadi?","Jawaban: cenderung naik.","Harga turun membuat es teh lebih terjangkau, sehingga Qd naik (selama pendapatan dan selera tetap). Ini sesuai hukum permintaan."]],
+sup:[
+["Pernahkah Kalian Perhatikan?","Mengapa penjual ingin menjual lebih banyak saat harga naik?","Harga naik, penjual cenderung ingin menjual lebih banyak.","Pernahkah kalian memperhatikan mengapa ketika harga suatu barang meningkat, penjual cenderung ingin menjual barang dalam jumlah yang lebih banyak? Nah, hal tersebut berkaitan dengan penawaran dalam ilmu ekonomi."],
+["Apa itu Penawaran?","Apa yang dimaksud penawaran dalam ilmu ekonomi?","Penawaran = kesediaan dan kemampuan menjual.","Penawaran adalah jumlah barang atau jasa yang bersedia dan mampu dijual produsen pada berbagai tingkat harga dalam periode tertentu."],
+["Penawaran vs Jumlah Ditawarkan","Apa perbedaan penawaran dengan jumlah barang yang ditawarkan?","Penawaran ≠ jumlah yang ditawarkan.","Penawaran: hubungan antara berbagai tingkat harga dan jumlah barang yang ingin dijual. Jumlah barang yang ditawarkan: banyaknya barang yang ingin dijual pada satu tingkat harga tertentu."],
+["Hukum Penawaran","Bagaimana bunyi hukum penawaran?","Harga naik, jumlah yang ditawarkan naik.","Hukum penawaran menyatakan bahwa ketika harga suatu barang naik, jumlah barang yang ditawarkan cenderung naik. Sebaliknya, ketika harga turun, jumlah barang yang ditawarkan cenderung turun."],
+["Ceteris Paribus","Apa arti ceteris paribus dan faktor apa yang dianggap tetap?","Faktor lain dianggap tetap.","Hubungan ini berlaku dengan asumsi ceteris paribus, yaitu faktor-faktor lain dianggap tetap. Contohnya, biaya produksi (biaya bahan baku) dan teknologi tidak mengalami perubahan."],
+["Contoh: Penjual Roti","Apa yang terjadi pada jumlah roti yang dijual saat harga roti berubah?","Harga naik, jumlah roti bertambah.","Harga Rp5.000: penjual menyediakan 20 roti per hari. Harga naik jadi Rp8.000: 30 roti per hari. Jika harga turun, penjual mungkin mengurangi roti karena keuntungan per roti lebih rendah."],
+["Kurva Penawaran","Bagaimana bentuk dan cara membaca kurva penawaran?","Garis kurva bergerak dari kiri bawah ke kanan atas.","Sumbu vertikal menunjukkan harga (P), sumbu horizontal menunjukkan jumlah barang yang ditawarkan (Qs). Bentuk ini menunjukkan bahwa harga dan jumlah barang yang ditawarkan memiliki hubungan searah."],
+["Hubungan Searah","Apa kesimpulan dari hukum penawaran?","Harga naik → Qs naik. Harga turun → Qs turun.","Dapat disimpulkan bahwa hukum penawaran menjelaskan hubungan searah antara harga dan jumlah barang yang ditawarkan, dengan asumsi faktor-faktor lain tetap."],
+["Sekarang, Coba Pikirkan!","Jika harga kue naik, bagaimana jumlah kue yang dijual?","Jumlah kue cenderung bertambah.","Soal: jika harga kue di pasaran naik, bagaimana kemungkinan perubahan jumlah kue yang ingin dijual produsen? Jawaban: cenderung bertambah, sesuai hukum penawaran (faktor lain tetap)."]]};
+
+
+function deck(root,data){
+ const n=data.length;let ord=[...data.keys()],i=0,sh=false,tm;
+ root.className="deck rv";
+ root.innerHTML=`<div class="stage"><button class="card3" type="button"><div class="face front"><div class="top"><span class="tg"></span><span class="side">Pertanyaan</span></div><h3></h3><p class="q"></p><small class="hint">↻ Ketuk kartu untuk melihat jawaban</small></div><div class="face back"><div class="top"><span class="tg"></span><span class="side">Jawaban</span></div><b class="hd"></b><p class="dt"></p><small class="hint">↻ Ketuk lagi untuk kembali ke pertanyaan</small></div></button></div><div class="pg"><div class="bar2" role="progressbar" aria-label="Kemajuan kartu" aria-valuemin="1" aria-valuemax="${n}"><i></i></div><span class="ct" aria-live="polite"></span></div><div class="ctl"><button class="pv" type="button" aria-label="Kartu sebelumnya">‹ Sebelumnya</button><button class="nx" type="button" aria-label="Kartu berikutnya">Berikutnya ›</button></div><div class="dots"></div><button class="sh" type="button" aria-pressed="false">Acak kartu</button>`;
+ const q=s=>$(s,root),c=q(".card3"),f=q(".front"),b=q(".back"),st=q(".stage"),dots=q(".dots");
+ dots.innerHTML=ord.map((_,j)=>`<button type="button" aria-label="Kartu ${j+1}"></button>`).join("");
+ function sync(){const fl=c.classList.contains("flip");f.setAttribute("aria-hidden",fl);b.setAttribute("aria-hidden",!fl);c.setAttribute("aria-label",fl?"Balik ke pertanyaan":"Balik kartu untuk melihat jawaban")}
+ function draw(d){const x=data[ord[i]];
+  $$(".tg",root).forEach(e=>e.textContent="Topik "+(ord[i]+1));
+  q("h3").textContent=x[0];q(".q").textContent=x[1];q(".hd").textContent=x[2];q(".dt").textContent=x[3];
+  q(".ct").textContent="Kartu "+(i+1)+" dari "+n;q(".bar2 i").style.width=(i+1)/n*100+"%";q(".bar2").setAttribute("aria-valuenow",i+1);
+  $$("button",dots).forEach((e,j)=>e.setAttribute("aria-current",j==i));
+  c.classList.remove("flip");sync();
+  if(d&&!RM){st.style.setProperty("--dx",d*30+"px");st.classList.remove("sw");void st.offsetWidth;st.classList.add("sw")}}
+ function go(j){j=(j+n)%n;const d=j>i?1:-1;clearTimeout(tm);
+  if(c.classList.contains("flip")){c.classList.remove("flip");sync();tm=setTimeout(()=>{i=j;draw(d)},RM?0:320)}else{i=j;draw(d)}}
+ c.onclick=()=>{c.classList.toggle("flip");sync()};
+ q(".pv").onclick=()=>go(i-1);q(".nx").onclick=()=>go(i+1);
+ dots.onclick=e=>{const x=$$("button",dots).indexOf(e.target.closest("button"));if(x>=0)go(x)};
+ q(".sh").onclick=e=>{sh=!sh;ord=[...data.keys()];if(sh)ord.sort(()=>Math.random()-.5);e.target.textContent=sh?"Urutkan kartu":"Acak kartu";e.target.setAttribute("aria-pressed",sh);clearTimeout(tm);i=0;draw(1)};
+ root.addEventListener("keydown",e=>{if(e.key=="ArrowRight")go(i+1);if(e.key=="ArrowLeft")go(i-1)});
+ let x0=null;root.addEventListener("touchstart",e=>x0=e.touches[0].clientX,{passive:true});
+ root.addEventListener("touchend",e=>{if(x0===null)return;const dx=e.changedTouches[0].clientX-x0;x0=null;if(Math.abs(dx)>60)go(i+(dx<0?1:-1))},{passive:true});
+ draw(0);
+}
+deck($("#k-dem"),CARDS.dem);deck($("#k-sup"),CARDS.sup);
+
+/* simulasi harga */
+const pr=$("#pr"),fm=v=>"Rp"+v+".000";
+function tw(el,to,fmt){const from=+el.dataset.v||0;el.dataset.v=to;if(RM){el.textContent=fmt(to);return}
+ const t0=performance.now();el._t=t0;(function f(t){if(el._t!==t0)return;const k=Math.min(1,(t-t0)/380);el.textContent=fmt(Math.round(from+(to-from)*k));if(k<1)requestAnimationFrame(f)})(t0)}
+function demo(){const p=+pr.value,qd=12-p,qs=p,d=p-6;
+ pr.setAttribute("aria-valuetext",fm(p));
+ tw($("#pv"),p,fm);tw($("#nd"),qd,String);tw($("#ns"),qs,String);
+ $("#bd").style.width=qd*10+"%";$("#bs").style.width=qs*10+"%";
+ const up=["▲","naik"],dn=["▼","turun"],eq=["●","tetap"],a=d>0?up:d<0?dn:eq,r=d>0?dn:d<0?up:eq;
+ $("#c0").textContent="Harga "+a[0]+" "+a[1];$("#c1").textContent="Qd "+r[0]+" "+r[1];$("#c2").textContent="Qs "+a[0]+" "+a[1];
+ $("#tx").textContent=d>0?"Harga naik: pembeli mengurangi pembelian, penjual ingin menjual lebih banyak.":d<0?"Harga turun: pembeli bertambah, penjual mengurangi jumlah yang dijual.":"Harga sedang: geser untuk melihat perubahan Qd dan Qs."}
+pr.oninput=demo;demo();
+
+/* navigasi aktif */
+const links=$$("nav a"),nav=$("nav"),ind=$(".ind");
+function mark(a){links.forEach(l=>l.setAttribute("aria-current",l==a));if(!a){ind.style.opacity=0;return}
+ ind.style.opacity=1;ind.style.width=a.offsetWidth+"px";ind.style.transform="translateX("+a.offsetLeft+"px)";ind.className="ind "+(a.classList.contains("dem")?"dem":"sup");
+ nav.scrollTo({left:a.offsetLeft-24,behavior:RM?"auto":"smooth"})}
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){cur=links.find(a=>a.getAttribute("href")=="#"+e.target.id);mark(cur)}}),{rootMargin:"-40% 0px -55% 0px"});
+$$("main section").forEach(s=>io.observe(s));
+new ResizeObserver(()=>document.documentElement.style.setProperty("--hh",$("header").offsetHeight+"px")).observe($("header"));
+
+/* ukuran teks */
+const S=[100,112.5,125,137.5];let si=0;
+try{si=+localStorage.getItem("sz")||0}catch(e){}
+function setSz(v){si=Math.max(0,Math.min(3,v));document.documentElement.style.fontSize=S[si]+"%";try{localStorage.setItem("sz",si)}catch(e){}
+ $("#szo").textContent=S[si]+"%";$("#am").setAttribute("aria-disabled",si==0);$("#ap").setAttribute("aria-disabled",si==3);requestAnimationFrame(()=>mark(cur))}
+setSz(si);$("#am").onclick=()=>setSz(si-1);$("#ap").onclick=()=>setSz(si+1);
+
+/* reveal */
+const rio=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("show");setTimeout(()=>e.target.classList.add("done"),RM?0:1500);rio.unobserve(e.target)}}),{threshold:.1,rootMargin:"0px 0px -5% 0px"});
+$$(".rv").forEach(e=>rio.observe(e));
+</script>
+</body>
+</html>
