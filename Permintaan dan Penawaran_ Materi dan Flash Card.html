@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Permintaan dan Penawaran: Materi dan Flash Card</title>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#F5F7FB;--card:#fff;--ink:#0F1B2D;--mut:#44546D;--line:#D5DDEA;--d:#1D4ED8;--ds:#E4ECFF;--s:#B93C0B;--ss:#FFEADD;--tag:#FFC83D;--on:#fff;color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0C1424;--card:#141F36;--ink:#EAF0FB;--mut:#A9B6CD;--line:#263450;--d:#86A8FF;--ds:#1A2B57;--s:#FF9D6B;--ss:#3A2316;--on:#0C1424;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0C1424;--card:#141F36;--ink:#EAF0FB;--mut:#A9B6CD;--line:#263450;--d:#86A8FF;--ds:#1A2B57;--s:#FF9D6B;--ss:#3A2316;--on:#0C1424;color-scheme:dark}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:calc(env(safe-area-inset-top,0px) + 76px);font-size:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 1rem/1.65 Lexend,system-ui,sans-serif;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--card);z-index:30}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--card);border-bottom:1px solid var(--line)}
+.bar{max-width:1080px;margin:auto;display:flex;align-items:center;gap:.6rem;padding:.4rem .75rem}
+.brand{font-weight:700;white-space:nowrap}
+nav{display:flex;gap:.2rem;overflow-x:auto;flex:1;scrollbar-width:none;padding:2px}
+nav::-webkit-scrollbar{display:none}
+nav a{min-height:44px;display:flex;align-items:center;padding:0 .9rem;border-radius:99px;color:var(--mut);text-decoration:none;white-space:nowrap;font-size:.9rem;font-weight:500;transition:background .3s,color .3s,transform .15s}
+nav a:active{transform:scale(.95)}
+nav a:hover{background:var(--bg)}
+nav a.dem[aria-current=true]{background:var(--d);color:var(--on)}
+nav a.sup[aria-current=true]{background:var(--s);color:var(--on)}
+.sz{display:flex;gap:.2rem}
+button{font:inherit;color:inherit}
+.sz button,.ctl button,.sh{min-width:44px;min-height:44px;border:1px solid var(--line);background:var(--card);border-radius:12px;cursor:pointer;font-weight:700;transition:transform .15s,background .2s}
+.sz button:active,.ctl button:active,.sh:active{transform:scale(.92)}
+:focus-visible{outline:3px solid var(--tag);outline-offset:2px;box-shadow:0 0 0 5px var(--ink)}
+.wrap{max-width:1080px;margin:auto;padding:3.5rem 1rem}
+.dem{--a:var(--d);--as:var(--ds)}.sup{--a:var(--s);--as:var(--ss)}
+.hero{display:grid;gap:2rem;grid-template-columns:1.1fr 1fr;align-items:center;padding-top:2.5rem}
+h1{font-size:clamp(2rem,5.5vw,3.4rem);line-height:1.1;margin:0 0 1rem;letter-spacing:-.02em}
+.lead{color:var(--mut);max-width:44ch;margin:0}
+.panel{background:var(--card);border:1px solid var(--line);border-radius:24px;padding:1.4rem}
+.panel label{display:flex;flex-wrap:wrap;justify-content:space-between;gap:.3rem;font-weight:500}
+input[type=range]{width:100%;height:44px;accent-color:var(--s);margin:.2rem 0 .6rem}
+.row{display:grid;grid-template-columns:minmax(7rem,auto) minmax(60px,1fr) 2.2rem;gap:.6rem;align-items:center;margin:.4rem 0;font-size:.9rem}
+.trk{height:16px;border-radius:9px;background:var(--bg);overflow:hidden}
+.trk i{display:block;height:100%;border-radius:9px;transition:width .45s cubic-bezier(.3,.7,.2,1)}
+#bd{background:var(--d)}#bs{background:var(--s)}
+#tx{margin:.8rem 0 0;color:var(--mut);font-size:.9rem;min-height:3em}
+h2{font-size:clamp(1.6rem,4vw,2.3rem);margin:0 0 .4rem;color:var(--a);letter-spacing:-.01em}
+.sub{margin:0 0 1.8rem;color:var(--mut);max-width:60ch}
+.grid{display:grid;gap:1rem;grid-template-columns:repeat(auto-fit,minmax(270px,1fr))}
+.it{background:var(--card);border:1px solid var(--line);border-left:6px solid var(--a);border-radius:18px;padding:1.2rem 1.3rem}
+.it h3{margin:0 0 .4rem;font-size:1.05rem}.it p{margin:0}
+.it svg{width:100%;max-width:460px;display:block;margin:0 auto;color:var(--mut)}
+.cv{fill:none;stroke:var(--a);stroke-width:4;stroke-linecap:round;stroke-dasharray:300;stroke-dashoffset:300}
+.in .cv{animation:dr 1.3s .15s cubic-bezier(.3,.7,.2,1) forwards}
+@keyframes dr{to{stroke-dashoffset:0}}
+svg text{fill:currentColor;font-size:12px}svg circle{fill:var(--a)}
+details{background:var(--as);border-radius:18px;padding:1.1rem 1.3rem;border:1px solid var(--line)}
+summary{cursor:pointer;font-weight:700;min-height:44px;display:flex;align-items:center}
+details p{margin:.4rem 0 0;animation:fi .4s}
+@keyframes fi{from{opacity:0;transform:translateY(-6px)}}
+.lnk{display:flex;align-items:center;justify-content:center;gap:.9rem;width:100%;min-height:6rem;margin:0 0 1.8rem;padding:1.2rem 1.5rem;border-radius:24px;border:4px solid var(--ink);background:var(--a);color:var(--on);text-decoration:none;font-weight:700;font-size:clamp(1.4rem,5vw,2rem);line-height:1.25;text-align:center;transition:transform .2s}
+.lnk::before{content:"▶";font-size:1.1em;flex:none}
+.lnk:hover{transform:scale(1.015)}
+.lnk:active{transform:scale(.97)}
+.deck{max-width:600px;margin:0 auto}
+.stage{perspective:1500px}
+.card3{all:unset;display:grid;width:100%;cursor:pointer;transform-style:preserve-3d;transition:transform .65s cubic-bezier(.3,.7,.2,1);border-radius:24px}
+.card3:focus-visible{outline:3px solid var(--tag);box-shadow:0 0 0 5px var(--ink)}
+.card3.flip{transform:rotateY(180deg)}
+.face{grid-area:1/1;backface-visibility:hidden;-webkit-backface-visibility:hidden;min-height:370px;padding:1.6rem;border-radius:24px;display:flex;flex-direction:column;justify-content:center;gap:.8rem;border:2px solid var(--a);background:var(--card);box-shadow:0 10px 30px -14px rgba(15,27,45,.35)}
+.back{transform:rotateY(180deg);background:var(--as)}
+.tg{align-self:flex-start;background:var(--tag);color:#1B1400;padding:.2rem .9rem .2rem 1.5rem;font-weight:700;font-size:.85rem;clip-path:polygon(.7rem 0,100% 0,100% 100%,.7rem 100%,0 50%)}
+.face h3{margin:0;color:var(--a);font-size:1.1rem}
+.q{margin:0;font-size:1.45rem;font-weight:700;line-height:1.35}
+.face small{color:var(--mut)}
+.hd{font-size:1.3rem;line-height:1.35;color:var(--a)}.dt{margin:0}
+.ctl{display:flex;justify-content:center;align-items:center;gap:1rem;margin-top:1.2rem}
+.ct{min-width:5rem;text-align:center;font-weight:500}
+.dots{display:flex;justify-content:center;flex-wrap:wrap;gap:.1rem;margin-top:.4rem}
+.dots button{width:44px;height:44px;border:0;background:none;cursor:pointer;display:grid;place-items:center}
+.dots button::after{content:"";width:10px;height:10px;border-radius:50%;background:var(--line);transition:transform .25s,background .25s}
+.dots button[aria-current=true]::after{background:var(--a);transform:scale(1.6)}
+.sh{display:block;margin:.4rem auto 0;padding:0 1.2rem}
+footer{text-align:center;color:var(--mut);padding:2rem 1rem 3rem;font-size:.9rem}
+@media(max-width:760px){.hero{grid-template-columns:1fr}.brand{display:none}.face{min-height:400px}.row{grid-template-columns:minmax(6rem,auto) minmax(50px,1fr) 2.2rem}}
+@media(prefers-reduced-motion:reduce){*{transition-duration:.01ms!important;animation-duration:.01ms!important}html{scroll-behavior:auto}.cv{stroke-dashoffset:0}}
+</style>
+</head>
+<body>
+<header><div class="bar">
+<span class="brand">Ekonomi X</span>
+<nav aria-label="Navigasi bagian">
+<a class="dem" href="#permintaan">Materi Permintaan</a>
+<a class="sup" href="#penawaran">Materi Penawaran</a>
+<a class="dem" href="#kartu-permintaan">Kartu Permintaan</a>
+<a class="sup" href="#kartu-penawaran">Kartu Penawaran</a>
+</nav>
+<div class="sz" role="group" aria-label="Ukuran teks"><button id="am" aria-label="Perkecil teks">A−</button><button id="ap" aria-label="Perbesar teks">A+</button></div>
+</div></header>
+
+<main>
+<div class="wrap hero">
+<div><h1>Harga naik, apa yang terjadi?</h1><p class="lead">Pelajari Hukum Permintaan dan Hukum Penawaran, lalu uji ingatanmu dengan flash card digital.</p></div>
+<div class="panel">
+<label for="pr">Geser harga <b id="pv"></b></label>
+<input id="pr" type="range" min="2" max="10" value="6" aria-describedby="tx">
+<div class="row"><span>Qd (diminta)</span><div class="trk"><i id="bd"></i></div><b id="nd"></b></div>
+<div class="row"><span>Qs (ditawarkan)</span><div class="trk"><i id="bs"></i></div><b id="ns"></b></div>
+<p id="tx" aria-live="polite"></p>
+<small style="color:var(--mut)">Angka hanya ilustrasi, faktor lain dianggap tetap.</small>
+</div>
+</div>
+
+<section id="permintaan" class="dem wrap"><h2>Materi Hukum Permintaan</h2><p class="sub">Hubungan antara harga dan jumlah barang yang diminta pembeli.</p><a class="lnk" target="_blank" rel="noopener" href="https://chillaaaa.github.io/hukum-permintaan/">Buka video pembelajaran</a><div class="grid" id="g-dem"></div></section>
+
+<section id="penawaran" class="sup wrap"><h2>Materi Hukum Penawaran</h2><p class="sub">Hubungan antara harga dan jumlah barang yang ditawarkan penjual.</p><a class="lnk" target="_blank" rel="noopener" href="https://chillaaaa.github.io/hukum-penawaran/">Buka audio pembelajaran</a><div class="grid" id="g-sup"></div></section>
+
+<section id="kartu-permintaan" class="dem wrap"><h2>Flash Card Hukum Permintaan</h2><p class="sub">Jawab pertanyaan di depan kartu, lalu ketuk kartu untuk melihat jawabannya.</p><div id="k-dem"></div></section>
+
+<section id="kartu-penawaran" class="sup wrap"><h2>Flash Card Hukum Penawaran</h2><p class="sub">Jawab pertanyaan di depan kartu, lalu ketuk kartu untuk melihat jawabannya.</p><div id="k-sup"></div></section>
+</main>
+<footer>Media Pembelajaran Ekonomi Inklusif, Kelompok 1A. Kelas X (Fase E).</footer>
+
+<script>
+const $=(s,r=document)=>r.querySelector(s);
+const MAT={dem:[
+["Pengertian permintaan","Permintaan adalah keinginan yang disertai kemampuan membeli. Kamu ingin es teh dan punya uang untuk membayarnya, itu baru disebut permintaan. Keinginan tanpa kemampuan membayar tidak dihitung."],
+["Qd berbeda dengan permintaan","Qd (jumlah diminta) adalah banyaknya barang yang diminta pada satu harga tertentu, misalnya 3 gelas pada harga Rp5.000. Permintaan adalah hubungan keseluruhan antara berbagai harga dan jumlah yang diminta."],
+["Ceteris paribus","Faktor lain dianggap tetap. Agar pengaruh harga terlihat jelas, pendapatan dan selera dianggap tidak berubah, seperti percobaan IPA yang hanya mengubah satu hal."],
+["Contoh: es krim","Es krim Rp10.000 terasa mahal, sehingga hanya sedikit siswa yang membeli. Saat turun jadi Rp5.000, lebih banyak siswa mampu dan mau membeli, jadi jumlah yang terjual naik."],
+["Bunyi hukum permintaan","Harga naik, Qd turun. Harga turun, Qd naik. Hubungannya berlawanan arah, seperti jungkat-jungkit, dengan syarat ceteris paribus."]],
+sup:[
+["Pengertian penawaran","Penawaran adalah jumlah barang atau jasa yang bersedia dan mampu dijual produsen pada berbagai tingkat harga dalam periode tertentu."],
+["Penawaran berbeda dengan jumlah ditawarkan","Penawaran adalah hubungan antara banyak tingkat harga dan jumlah barang yang ingin dijual. Jumlah ditawarkan (Qs) adalah banyaknya barang yang ingin dijual pada satu tingkat harga tertentu."],
+["Ceteris paribus","Faktor lain dianggap tetap. Contohnya, biaya bahan baku dan teknologi tidak mengalami perubahan."],
+["Contoh: penjual roti","Pada harga Rp5.000, penjual menyediakan 20 roti per hari. Saat harga naik jadi Rp8.000, ia menyediakan 30 roti. Jika harga turun, jumlah roti bisa dikurangi karena keuntungan per roti lebih rendah."],
+["Bunyi hukum penawaran","Harga naik, Qs naik. Harga turun, Qs turun. Hubungannya searah, dengan asumsi faktor lain tetap."]]};
+const THINK={dem:["Jika harga es teh turun, bagaimana jumlah yang ingin dibeli siswa?","Cenderung naik. Harga turun membuat es teh lebih terjangkau, sehingga Qd naik (selama pendapatan dan selera tetap)."],
+sup:["Jika harga kue naik, bagaimana jumlah kue yang dijual?","Jumlah kue cenderung bertambah, sesuai hukum penawaran (faktor lain tetap)."]};
+function fig(k){const s=k=="sup";
+return `<div class="it"><h3>Kurva ${s?"penawaran":"permintaan"}</h3><svg viewBox="0 0 300 190" role="img" aria-label="Kurva ${s?"penawaran naik dari kiri bawah ke kanan atas":"permintaan turun dari kiri atas ke kanan bawah"}"><path d="M40 8V160H284" fill="none" stroke="currentColor" stroke-width="2"/><text x="22" y="14">P</text><text x="262" y="178">${s?"Qs":"Qd"}</text><path class="cv" d="${s?"M50 150L250 30":"M50 30L250 150"}"/>${s?`<circle cx="50" cy="150" r="5"/><circle cx="250" cy="30" r="5"/><text x="56" y="178">Rp5.000: 20</text><text x="240" y="22" text-anchor="end">Rp8.000: 30</text>`:`<circle cx="50" cy="30" r="5"/><circle cx="250" cy="150" r="5"/><text x="60" y="26">harga tinggi, Qd sedikit</text><text x="244" y="178" text-anchor="end">harga rendah, Qd banyak</text>`}</svg><p style="margin-top:.6rem">${s?"Kurva naik dari kiri bawah ke kanan atas. Sumbu tegak (P) adalah harga, sumbu datar (Qs) adalah jumlah yang ditawarkan.":"Kurva menurun dari kiri atas ke kanan bawah. Sumbu tegak (P) adalah harga, sumbu datar (Qd) adalah jumlah yang diminta."}</p></div>`}
+for(const k in MAT){$("#g-"+k).innerHTML=MAT[k].map(([t,p])=>`<article class="it"><h3>${t}</h3><p>${p}</p></article>`).join("")+fig(k)+`<details><summary>Coba pikirkan: ${THINK[k][0]}</summary><p>${THINK[k][1]}</p></details>`}
+
+const CARDS={dem:[
+["Apa itu Permintaan?","Apa yang dimaksud permintaan dalam ilmu ekonomi?","Permintaan = keinginan + kemampuan membeli.","Dalam ekonomi, permintaan bukan sekadar ingin. Kamu ingin es teh dan punya uang untuk membayarnya, itu baru disebut permintaan. Contoh: siswa di kantin ingin jajan dan membawa uang saku."],
+["Keinginan Saja Belum Cukup","Mengapa keinginan saja belum cukup?","Ingin + mampu membayar = permintaan.","Banyak orang ingin ponsel mahal, tapi tidak semuanya punya uang untuk membelinya. Keinginan tanpa kemampuan membayar tidak dihitung sebagai permintaan, karena tidak berujung pada pembelian di pasar."],
+["Jumlah Diminta (Qd)","Apa bedanya Qd dengan permintaan?","Qd = banyaknya barang yang diminta pada satu harga tertentu.","Qd hanya melihat satu titik harga. Contoh: pada harga Rp5.000, siswa meminta 3 gelas. Permintaan adalah hubungan keseluruhan antara berbagai harga dan banyaknya barang yang diminta."],
+["Ceteris Paribus","Apa arti ceteris paribus?","Faktor lain dianggap tetap.","Agar pengaruh harga terlihat jelas, hal lain seperti pendapatan dan selera dianggap tidak berubah. Seperti percobaan IPA: hanya satu hal yang diubah, yaitu harga, lalu kita amati perubahan jumlah yang diminta."],
+["Contoh: Es Krim","Apa yang terjadi pada pembeli saat harga es krim berubah?","Harga naik, pembeli berkurang. Harga turun, pembeli bertambah.","Es krim Rp10.000 terasa mahal, sehingga hanya sedikit siswa yang membeli. Saat turun jadi Rp5.000, lebih banyak siswa mampu dan mau membeli, jadi jumlah yang terjual naik."],
+["Kurva Permintaan","Bagaimana bentuk dan cara membaca kurva permintaan?","Kurva menurun dari kiri atas ke kanan bawah.","Sumbu tegak (P) adalah harga, sumbu datar (Qd) adalah jumlah yang diminta. Harga tinggi di atas dengan Qd sedikit, harga rendah di bawah dengan Qd banyak. Itu tanda hubungan berlawanan arah."],
+["Hukum Permintaan","Bagaimana bunyi hukum permintaan?","Harga naik, Qd turun. Harga turun, Qd naik.","Seperti jungkat-jungkit: bila satu sisi naik, sisi lain turun. Hukum ini berlaku dengan syarat ceteris paribus, yaitu faktor lain seperti pendapatan dan selera tetap."],
+["Coba Pikirkan!","Jika harga es teh turun, apa yang terjadi?","Jawaban: cenderung naik.","Harga turun membuat es teh lebih terjangkau, sehingga Qd naik (selama pendapatan dan selera tetap). Ini sesuai hukum permintaan."]],
+sup:[
+["Pernahkah Kalian Perhatikan?","Mengapa penjual ingin menjual lebih banyak saat harga naik?","Harga naik, penjual cenderung ingin menjual lebih banyak.","Pernahkah kalian memperhatikan mengapa ketika harga suatu barang meningkat, penjual cenderung ingin menjual barang dalam jumlah yang lebih banyak? Nah, hal tersebut berkaitan dengan penawaran dalam ilmu ekonomi."],
+["Apa itu Penawaran?","Apa yang dimaksud penawaran dalam ilmu ekonomi?","Penawaran = kesediaan dan kemampuan menjual.","Penawaran adalah jumlah barang atau jasa yang bersedia dan mampu dijual produsen pada berbagai tingkat harga dalam periode tertentu."],
+["Penawaran vs Jumlah Ditawarkan","Apa perbedaan penawaran dengan jumlah barang yang ditawarkan?","Penawaran ≠ jumlah yang ditawarkan.","Penawaran: hubungan antara berbagai tingkat harga dan jumlah barang yang ingin dijual. Jumlah barang yang ditawarkan: banyaknya barang yang ingin dijual pada satu tingkat harga tertentu."],
+["Hukum Penawaran","Bagaimana bunyi hukum penawaran?","Harga naik, jumlah yang ditawarkan naik.","Hukum penawaran menyatakan bahwa ketika harga suatu barang naik, jumlah barang yang ditawarkan cenderung naik. Sebaliknya, ketika harga turun, jumlah barang yang ditawarkan cenderung turun."],
+["Ceteris Paribus","Apa arti ceteris paribus dan faktor apa yang dianggap tetap?","Faktor lain dianggap tetap.","Hubungan ini berlaku dengan asumsi ceteris paribus, yaitu faktor-faktor lain dianggap tetap. Contohnya, biaya produksi (biaya bahan baku) dan teknologi tidak mengalami perubahan."],
+["Contoh: Penjual Roti","Apa yang terjadi pada jumlah roti yang dijual saat harga roti berubah?","Harga naik, jumlah roti bertambah.","Harga Rp5.000: penjual menyediakan 20 roti per hari. Harga naik jadi Rp8.000: 30 roti per hari. Jika harga turun, penjual mungkin mengurangi roti karena keuntungan per roti lebih rendah."],
+["Kurva Penawaran","Bagaimana bentuk dan cara membaca kurva penawaran?","Garis kurva bergerak dari kiri bawah ke kanan atas.","Sumbu vertikal menunjukkan harga (P), sumbu horizontal menunjukkan jumlah barang yang ditawarkan (Qs). Bentuk ini menunjukkan bahwa harga dan jumlah barang yang ditawarkan memiliki hubungan searah."],
+["Hubungan Searah","Apa kesimpulan dari hukum penawaran?","Harga naik → Qs naik. Harga turun → Qs turun.","Dapat disimpulkan bahwa hukum penawaran menjelaskan hubungan searah antara harga dan jumlah barang yang ditawarkan, dengan asumsi faktor-faktor lain tetap."],
+["Sekarang, Coba Pikirkan!","Jika harga kue naik, bagaimana jumlah kue yang dijual?","Jumlah kue cenderung bertambah.","Soal: jika harga kue di pasaran naik, bagaimana kemungkinan perubahan jumlah kue yang ingin dijual produsen? Jawaban: cenderung bertambah, sesuai hukum penawaran (faktor lain tetap)."]]};
+
+function deck(root,data,k){
+ const n=data.length;let ord=[...data.keys()],i=0,sh=false,tm;
+ root.className="deck";
+ root.innerHTML=`<div class="stage"><button class="card3" type="button" aria-label="Balik kartu"><div class="face front"><span class="tg"></span><h3></h3><p class="q"></p><small>Jawab dulu, lalu balik kartu!</small></div><div class="face back"><b class="hd"></b><p class="dt"></p></div></button></div><div class="ctl"><button class="pv" aria-label="Kartu sebelumnya">‹</button><span class="ct" aria-live="polite"></span><button class="nx" aria-label="Kartu berikutnya">›</button></div><div class="dots"></div><button class="sh" aria-pressed="false">Acak kartu</button>`;
+ const q=s=>$(s,root),c=q(".card3"),f=q(".front"),b=q(".back"),dots=q(".dots");
+ dots.innerHTML=ord.map((_,j)=>`<button aria-label="Kartu ${j+1}"></button>`).join("");
+ function draw(){const d=data[ord[i]];
+  q(".tg").textContent="Topik "+(ord[i]+1);q("h3").textContent=d[0];q(".q").textContent=d[1];q(".hd").textContent=d[2];q(".dt").textContent=d[3];
+  q(".ct").textContent=(i+1)+" dari "+n;
+  [...dots.children].forEach((e,j)=>e.setAttribute("aria-current",j==i));
+  c.classList.remove("flip");sync()}
+ function sync(){const fl=c.classList.contains("flip");f.setAttribute("aria-hidden",fl);b.setAttribute("aria-hidden",!fl);c.setAttribute("aria-label",fl?"Balik ke pertanyaan":"Balik kartu untuk melihat jawaban")}
+ function go(j){j=(j+n)%n;clearTimeout(tm);if(c.classList.contains("flip")){c.classList.remove("flip");sync();tm=setTimeout(()=>{i=j;draw()},300)}else{i=j;draw()}}
+ c.onclick=()=>{c.classList.toggle("flip");sync()};
+ q(".pv").onclick=()=>go(i-1);q(".nx").onclick=()=>go(i+1);
+ dots.onclick=e=>{const x=[...dots.children].indexOf(e.target.closest("button"));if(x>=0)go(x)};
+ q(".sh").onclick=e=>{sh=!sh;ord=[...data.keys()];if(sh)ord.sort(()=>Math.random()-.5);e.target.textContent=sh?"Urutkan kartu":"Acak kartu";e.target.setAttribute("aria-pressed",sh);i=0;draw()};
+ root.addEventListener("keydown",e=>{if(e.key=="ArrowRight")go(i+1);if(e.key=="ArrowLeft")go(i-1)});
+ let x0=null;root.addEventListener("touchstart",e=>x0=e.touches[0].clientX,{passive:true});
+ root.addEventListener("touchend",e=>{if(x0===null)return;const dx=e.changedTouches[0].clientX-x0;x0=null;if(Math.abs(dx)>60)go(i+(dx<0?1:-1))},{passive:true});
+ draw();
+}
+deck($("#k-dem"),CARDS.dem,"dem");deck($("#k-sup"),CARDS.sup,"sup");
+
+/* demo harga */
+const pr=$("#pr");
+function demo(){const p=+pr.value,qd=12-p,qs=p;
+ $("#pv").textContent="Rp"+p+".000";$("#bd").style.width=qd*10+"%";$("#bs").style.width=qs*10+"%";$("#nd").textContent=qd;$("#ns").textContent=qs;
+ $("#tx").textContent=p>6?"Harga naik: pembeli mengurangi pembelian, penjual ingin menjual lebih banyak.":p<6?"Harga turun: pembeli bertambah, penjual mengurangi jumlah yang dijual.":"Harga sedang: geser untuk melihat perubahan Qd dan Qs."}
+pr.oninput=demo;demo();
+
+/* nav aktif */
+const links=[...document.querySelectorAll("nav a")],nav=$("nav");
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;
+ links.forEach(a=>{const on=a.getAttribute("href")=="#"+e.target.id;a.setAttribute("aria-current",on);if(on)nav.scrollTo({left:a.offsetLeft-24,behavior:"smooth"})})}),{rootMargin:"-40% 0px -55% 0px"});
+document.querySelectorAll("main section").forEach(s=>io.observe(s));
+const io2=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("in");io2.unobserve(e.target)}}),{threshold:.5});
+document.querySelectorAll(".it").forEach(e=>{if($("svg",e))io2.observe(e)});
+
+/* ukuran teks */
+const S=[100,112.5,125,137.5];let si=0;
+try{si=+localStorage.getItem("sz")||0}catch(e){}
+function setSz(v){si=Math.max(0,Math.min(3,v));document.documentElement.style.fontSize=S[si]+"%";try{localStorage.setItem("sz",si)}catch(e){}}
+setSz(si);$("#am").onclick=()=>setSz(si-1);$("#ap").onclick=()=>setSz(si+1);
+</script>
+</body>
+</html>
